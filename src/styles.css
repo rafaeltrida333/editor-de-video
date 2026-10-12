@@ -1,0 +1,207 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #111;
+  color: #eee;
+}
+
+button,
+input {
+  font: inherit;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #1e1e1e;
+  color: inherit;
+  padding: 6px 10px;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+button.danger {
+  border-color: #7f1d1d;
+  color: #fca5a5;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.toolbar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 16px;
+  border-bottom: 1px solid #222;
+}
+
+.toolbar strong {
+  margin-right: 12px;
+}
+
+.toolbar input {
+  width: 260px;
+}
+
+.workspace {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.preview {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.preview > * {
+  max-width: 960px;
+}
+
+.inspector {
+  width: 260px;
+  padding: 16px;
+  border-left: 1px solid #222;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.inspector h3 {
+  margin: 0;
+}
+
+.inspector label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: #aaa;
+}
+
+.hint {
+  color: #777;
+  font-size: 14px;
+}
+
+.timeline {
+  display: flex;
+  height: 220px;
+  border-top: 1px solid #222;
+  background: #161616;
+}
+
+.track-names {
+  width: 90px;
+  flex-shrink: 0;
+  border-right: 1px solid #222;
+}
+
+.ruler-spacer,
+.ruler {
+  height: 24px;
+}
+
+.track-name {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  font-size: 13px;
+  color: #aaa;
+  border-bottom: 1px solid #222;
+}
+
+.track-area {
+  flex: 1;
+  overflow-x: auto;
+}
+
+.track-content {
+  position: relative;
+  min-height: 100%;
+}
+
+.ruler {
+  position: relative;
+  border-bottom: 1px solid #222;
+}
+
+.ruler span {
+  position: absolute;
+  top: 4px;
+  font-size: 11px;
+  color: #666;
+  padding-left: 3px;
+  border-left: 1px solid #333;
+}
+
+.track {
+  position: relative;
+  border-bottom: 1px solid #222;
+}
+
+.item {
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  border-radius: 6px;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: grab;
+  user-select: none;
+  border: 2px solid transparent;
+}
+
+.item-text {
+  background: #b45309;
+}
+
+.item-solid {
+  background: #4338ca;
+}
+
+.item-video {
+  background: #0f766e;
+}
+
+.item.selected {
+  border-color: #fff;
+}
+
+.resize-handle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  cursor: ew-resize;
+}
+
+.playhead {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #ef4444;
+  pointer-events: none;
+}
