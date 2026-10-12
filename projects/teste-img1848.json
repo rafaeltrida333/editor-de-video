@@ -1,0 +1,47 @@
+{
+  "width": 1080,
+  "height": 1920,
+  "tracks": [
+    {
+      "id": "texto",
+      "name": "Texto",
+      "items": [
+        {
+          "id": "titulo",
+          "type": "text",
+          "text": "Teste do editor",
+          "color": "#ffffff",
+          "position": "top",
+          "fontSize": 110,
+          "fade": 15,
+          "from": 0,
+          "durationInFrames": 105
+        },
+        {
+          "id": "legenda",
+          "type": "text",
+          "text": "Editado com Remotion",
+          "color": "#facc15",
+          "position": "bottom",
+          "fontSize": 80,
+          "fade": 15,
+          "from": 1041,
+          "durationInFrames": 120
+        }
+      ]
+    },
+    {
+      "id": "video",
+      "name": "Vídeo",
+      "items": [
+        {
+          "id": "img1848",
+          "type": "video",
+          "src": "IMG_1848_EDITADO.mp4",
+          "from": 0,
+          "durationInFrames": 1161
+        }
+      ]
+    }
+  ]
+}
