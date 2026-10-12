@@ -192,6 +192,10 @@ button.danger {
   background: #525252;
 }
 
+.item-audio {
+  background: #0369a1;
+}
+
 .item.selected {
   border-color: #fff;
 }

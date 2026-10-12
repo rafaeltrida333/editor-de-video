@@ -1,8 +1,9 @@
 import React from 'react';
-import {AbsoluteFill, Sequence, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, Audio, Sequence, useCurrentFrame} from 'remotion';
 import {CaptionsComp} from './items/CaptionsComp';
 import {ProgressComp} from './items/ProgressComp';
 import {TextComp} from './items/TextComp';
+import {resolveSrc} from './items/resolve-src';
 import {VideoComp} from './items/VideoComp';
 import {transitionStyle} from './transitions';
 import type {Item, Track} from './types';
@@ -19,6 +20,8 @@ const ItemContent: React.FC<{item: Item}> = ({item}) => {
       return <CaptionsComp item={item} />;
     case 'progress':
       return <ProgressComp item={item} />;
+    case 'audio':
+      return <Audio src={resolveSrc(item.src)} volume={item.volume} />;
   }
 };
 

@@ -1,6 +1,7 @@
 // Renders a project JSON to an .mp4.
 // Usage: node scripts/render.mjs <project.json> <saída.mp4> [pasta-de-arquivos]
-// Video items whose src is a plain file name are read from the files folder.
+// Video and audio items whose src is a plain file name are read from the files folder
+// (default: public/, which has the sound effects in public/sfx/).
 import {bundle} from '@remotion/bundler';
 import {renderMedia, selectComposition} from '@remotion/renderer';
 import fs from 'node:fs';
@@ -16,7 +17,7 @@ const inputProps = JSON.parse(fs.readFileSync(projectPath, 'utf8'));
 
 const serveUrl = await bundle({
   entryPoint: path.resolve('src/remotion/index.ts'),
-  publicDir: publicDir ? path.resolve(publicDir) : null,
+  publicDir: path.resolve(publicDir ?? 'public'),
 });
 
 // Optional: point REMOTION_BROWSER at an existing Chrome Headless Shell instead of downloading one.

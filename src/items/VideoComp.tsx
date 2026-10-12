@@ -1,11 +1,10 @@
 import React from 'react';
-import {AbsoluteFill, Easing, interpolate, OffthreadVideo, staticFile, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, Easing, interpolate, OffthreadVideo, useCurrentFrame} from 'remotion';
+import {resolveSrc} from './resolve-src';
 import type {VideoItem, Zoom} from '../types';
 
 const ZOOM_FRAMES = 5;
 
-const resolveSrc = (src: string) =>
-  /^(https?:|blob:|data:)/.test(src) ? src : staticFile(src);
 
 // Scale at a frame, easing quickly from the previous zoom level into the next one.
 // Also returns a blur that peaks during the change, like a whip zoom.

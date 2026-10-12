@@ -71,7 +71,14 @@ export type ProgressItem = BaseItem & {
   color: string;
 };
 
-export type Item = SolidItem | TextItem | VideoItem | CaptionsItem | ProgressItem;
+// A sound effect or music. src works like in VideoItem.
+export type AudioItem = BaseItem & {
+  type: 'audio';
+  src: string;
+  volume?: number;
+};
+
+export type Item = SolidItem | TextItem | VideoItem | CaptionsItem | ProgressItem | AudioItem;
 
 export const itemLabels: Record<Item['type'], string> = {
   solid: 'Cor',
@@ -79,6 +86,7 @@ export const itemLabels: Record<Item['type'], string> = {
   video: 'Vídeo',
   captions: 'Legendas',
   progress: 'Progresso',
+  audio: 'Som',
 };
 
 export type Track = {

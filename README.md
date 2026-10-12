@@ -27,7 +27,7 @@ Descreva o vídeo num arquivo JSON (veja `projects/teste-img1848.json`) e rode:
 npm run render -- projects/teste-img1848.json saida.mp4 pasta-com-os-videos
 ```
 
-Itens de vídeo com `src` sendo só o nome do arquivo são lidos da pasta passada no terceiro argumento.
+Itens de vídeo e áudio com `src` sendo só o nome do arquivo são lidos da pasta passada no terceiro argumento (por padrão, `public/`).
 Na primeira vez o Remotion baixa o Chrome Headless Shell. Para usar um que já está instalado, defina `REMOTION_BROWSER` com o caminho dele.
 
 ## Legendas automáticas
@@ -47,6 +47,7 @@ Depois, coloque o conteúdo de `legendas.json` num item `"type": "captions"` do 
 - `video`: `zooms` (cortes com zoom em frames específicos), `grade` (brilho, contraste, saturação), `vignette`
 - `captions`: legendas no estilo TikTok com a palavra falada destacada
 - `progress`: barra de progresso no topo
+- `audio`: efeitos sonoros ou música. Os sons em `public/sfx/` (whoosh, pop, impacto, ding) foram gerados do zero por `scripts/make-sfx.py`, então podem ser usados à vontade. O pacote `@remotion/sfx` tem outros sons prontos (por URL)
 - Em qualquer item, `enter` e `exit` com `fade`, `slide-up`, `slide-left`, `zoom` ou `wipe`. Itens sobrepostos em faixas diferentes viram transições.
 
 ## Estrutura

@@ -198,6 +198,132 @@
           "durationInFrames": 1161
         }
       ]
+    },
+    {
+      "id": "sons",
+      "name": "Sons",
+      "items": [
+        {
+          "id": "sfx-entrada",
+          "type": "audio",
+          "src": "sfx/whoosh.wav",
+          "volume": 0.45,
+          "from": 0,
+          "durationInFrames": 17
+        },
+        {
+          "id": "sfx-zoom-150",
+          "type": "audio",
+          "src": "sfx/whoosh.wav",
+          "volume": 0.3,
+          "from": 141,
+          "durationInFrames": 17
+        },
+        {
+          "id": "sfx-zoom-240",
+          "type": "audio",
+          "src": "sfx/whoosh.wav",
+          "volume": 0.3,
+          "from": 231,
+          "durationInFrames": 17
+        },
+        {
+          "id": "sfx-zoom-420",
+          "type": "audio",
+          "src": "sfx/whoosh.wav",
+          "volume": 0.3,
+          "from": 411,
+          "durationInFrames": 17
+        },
+        {
+          "id": "sfx-zoom-480",
+          "type": "audio",
+          "src": "sfx/whoosh.wav",
+          "volume": 0.3,
+          "from": 471,
+          "durationInFrames": 17
+        },
+        {
+          "id": "sfx-zoom-630",
+          "type": "audio",
+          "src": "sfx/whoosh.wav",
+          "volume": 0.3,
+          "from": 621,
+          "durationInFrames": 17
+        },
+        {
+          "id": "sfx-zoom-720",
+          "type": "audio",
+          "src": "sfx/whoosh.wav",
+          "volume": 0.3,
+          "from": 711,
+          "durationInFrames": 17
+        },
+        {
+          "id": "sfx-zoom-960",
+          "type": "audio",
+          "src": "sfx/whoosh.wav",
+          "volume": 0.3,
+          "from": 951,
+          "durationInFrames": 17
+        },
+        {
+          "id": "sfx-impacto-839",
+          "type": "audio",
+          "src": "sfx/impact.wav",
+          "volume": 0.6,
+          "from": 839,
+          "durationInFrames": 21
+        },
+        {
+          "id": "sfx-impacto-987",
+          "type": "audio",
+          "src": "sfx/impact.wav",
+          "volume": 0.6,
+          "from": 987,
+          "durationInFrames": 21
+        },
+        {
+          "id": "sfx-pop-690",
+          "type": "audio",
+          "src": "sfx/pop.wav",
+          "volume": 0.5,
+          "from": 690,
+          "durationInFrames": 4
+        },
+        {
+          "id": "sfx-pop-842",
+          "type": "audio",
+          "src": "sfx/pop.wav",
+          "volume": 0.5,
+          "from": 842,
+          "durationInFrames": 4
+        },
+        {
+          "id": "sfx-pop-960",
+          "type": "audio",
+          "src": "sfx/pop.wav",
+          "volume": 0.5,
+          "from": 960,
+          "durationInFrames": 4
+        },
+        {
+          "id": "sfx-final",
+          "type": "audio",
+          "src": "sfx/whoosh.wav",
+          "volume": 0.45,
+          "from": 1101,
+          "durationInFrames": 17
+        },
+        {
+          "id": "sfx-ding",
+          "type": "audio",
+          "src": "sfx/ding.wav",
+          "volume": 0.35,
+          "from": 1116,
+          "durationInFrames": 36
+        }
+      ]
     }
   ]
 }
