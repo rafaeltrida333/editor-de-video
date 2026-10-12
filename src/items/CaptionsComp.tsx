@@ -39,8 +39,7 @@ export const CaptionsComp: React.FC<{item: CaptionsItem}> = ({item}) => {
           textAlign: 'center',
           whiteSpace: 'pre',
           padding: '0 6%',
-          WebkitTextStroke: '10px black',
-          paintOrder: 'stroke',
+          textShadow: '0 0 8px black, 0 0 8px black, 0 6px 0 black',
           transform: `scale(${0.8 + 0.2 * scale})`,
         }}
       >
