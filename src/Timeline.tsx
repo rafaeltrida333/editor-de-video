@@ -1,6 +1,6 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
 import type {PlayerRef} from '@remotion/player';
-import type {Item, Track} from './types';
+import {itemLabels, type Item, type Track} from './types';
 
 const PX_PER_FRAME = 4;
 const TRACK_HEIGHT = 48;
@@ -122,7 +122,7 @@ export const Timeline: React.FC<{
                   }}
                   onPointerDown={(e) => startDrag(e, item, 'move')}
                 >
-                  <span>{item.type === 'text' ? item.text : item.type === 'solid' ? 'Cor' : 'Vídeo'}</span>
+                  <span>{item.type === 'text' ? item.text : itemLabels[item.type]}</span>
                   <div
                     className="resize-handle"
                     onPointerDown={(e) => startDrag(e, item, 'resize')}

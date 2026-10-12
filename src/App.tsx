@@ -2,7 +2,7 @@ import React, {useCallback, useMemo, useRef, useState} from 'react';
 import {Player, type PlayerRef} from '@remotion/player';
 import {Composition} from './Composition';
 import {Timeline} from './Timeline';
-import {FPS, getDurationInFrames, HEIGHT, WIDTH, type Item, type Track} from './types';
+import {FPS, getDurationInFrames, HEIGHT, itemLabels, WIDTH, type Item, type Track} from './types';
 
 const newId = () => Math.random().toString(36).slice(2, 10);
 
@@ -136,7 +136,7 @@ export const App: React.FC = () => {
         <aside className="inspector">
           {selected ? (
             <>
-              <h3>{selected.type === 'text' ? 'Texto' : selected.type === 'solid' ? 'Cor' : 'Vídeo'}</h3>
+              <h3>{itemLabels[selected.type]}</h3>
               {selected.type === 'text' && (
                 <label>
                   Texto

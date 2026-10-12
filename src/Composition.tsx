@@ -1,67 +1,33 @@
 import React from 'react';
-import {
-  AbsoluteFill,
-  interpolate,
-  OffthreadVideo,
-  Sequence,
-  staticFile,
-  useCurrentFrame,
-} from 'remotion';
-import type {Item, TextItem, Track} from './types';
+import {AbsoluteFill, Sequence, useCurrentFrame} from 'remotion';
+import {CaptionsComp} from './items/CaptionsComp';
+import {ProgressComp} from './items/ProgressComp';
+import {TextComp} from './items/TextComp';
+import {VideoComp} from './items/VideoComp';
+import {transitionStyle} from './transitions';
+import type {Item, Track} from './types';
 
-const resolveSrc = (src: string) =>
-  /^(https?:|blob:|data:)/.test(src) ? src : staticFile(src);
-
-const justify = {top: 'flex-start', center: 'center', bottom: 'flex-end'} as const;
-
-const TextComp: React.FC<{item: TextItem}> = ({item}) => {
-  const frame = useCurrentFrame();
-  const fade = item.fade ?? 0;
-  const opacity =
-    fade > 0
-      ? interpolate(
-          frame,
-          [0, fade, item.durationInFrames - fade, item.durationInFrames],
-          [0, 1, 1, 0],
-          {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'},
-        )
-      : 1;
-
-  return (
-    <AbsoluteFill
-      style={{
-        justifyContent: justify[item.position ?? 'center'],
-        alignItems: 'center',
-        padding: '8%',
-        textAlign: 'center',
-        color: item.color,
-        fontSize: item.fontSize ?? 80,
-        fontFamily: 'sans-serif',
-        fontWeight: 'bold',
-        textShadow: '0 4px 24px rgba(0, 0, 0, 0.6)',
-        opacity,
-      }}
-    >
-      {item.text}
-    </AbsoluteFill>
-  );
+const ItemContent: React.FC<{item: Item}> = ({item}) => {
+  switch (item.type) {
+    case 'solid':
+      return <AbsoluteFill style={{backgroundColor: item.color, opacity: item.opacity ?? 1}} />;
+    case 'text':
+      return <TextComp item={item} />;
+    case 'video':
+      return <VideoComp item={item} />;
+    case 'captions':
+      return <CaptionsComp item={item} />;
+    case 'progress':
+      return <ProgressComp item={item} />;
+  }
 };
 
 const ItemComp: React.FC<{item: Item}> = ({item}) => {
-  if (item.type === 'solid') {
-    return <AbsoluteFill style={{backgroundColor: item.color}} />;
-  }
-
-  if (item.type === 'text') {
-    return <TextComp item={item} />;
-  }
-
+  const frame = useCurrentFrame();
   return (
-    <OffthreadVideo
-      src={resolveSrc(item.src)}
-      trimBefore={item.trimBefore}
-      volume={item.volume}
-    />
+    <AbsoluteFill style={transitionStyle(frame, item.durationInFrames, item.enter, item.exit)}>
+      <ItemContent item={item} />
+    </AbsoluteFill>
   );
 };
 

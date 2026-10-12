@@ -3,30 +3,138 @@
   "height": 1920,
   "tracks": [
     {
-      "id": "texto",
-      "name": "Texto",
+      "id": "barra",
+      "name": "Barra",
       "items": [
         {
-          "id": "titulo",
-          "type": "text",
-          "text": "Teste do editor",
-          "color": "#ffffff",
-          "position": "top",
-          "fontSize": 110,
-          "fade": 15,
+          "id": "progresso",
+          "type": "progress",
+          "color": "#facc15",
           "from": 0,
-          "durationInFrames": 105
+          "durationInFrames": 1161
+        }
+      ]
+    },
+    {
+      "id": "encerramento",
+      "name": "Final",
+      "items": [
+        {
+          "id": "final-fundo",
+          "type": "solid",
+          "color": "#000000",
+          "opacity": 0.75,
+          "enter": {
+            "type": "slide-up",
+            "durationInFrames": 10
+          },
+          "from": 1110,
+          "durationInFrames": 51
         },
         {
-          "id": "legenda",
+          "id": "final-texto",
           "type": "text",
-          "text": "Editado com Remotion",
+          "text": "COMENTE\nPROCESSO",
           "color": "#facc15",
-          "position": "bottom",
-          "fontSize": 80,
-          "fade": 15,
-          "from": 1041,
-          "durationInFrames": 120
+          "fontSize": 150,
+          "animation": "pop",
+          "from": 1116,
+          "durationInFrames": 45
+        }
+      ]
+    },
+    {
+      "id": "motion",
+      "name": "Motion",
+      "items": [
+        {
+          "id": "kw-resultado",
+          "type": "text",
+          "text": "RESULTADO",
+          "color": "#000000",
+          "background": "#facc15",
+          "rotate": -4,
+          "y": 40,
+          "fontSize": 96,
+          "animation": "pop",
+          "exit": {
+            "type": "fade",
+            "durationInFrames": 8
+          },
+          "from": 690,
+          "durationInFrames": 45
+        },
+        {
+          "id": "kw-mentoria",
+          "type": "text",
+          "text": "MENTORIA",
+          "color": "#ffffff",
+          "background": "#dc2626",
+          "rotate": 3,
+          "y": 40,
+          "fontSize": 96,
+          "animation": "pop",
+          "exit": {
+            "type": "fade",
+            "durationInFrames": 8
+          },
+          "from": 842,
+          "durationInFrames": 50
+        },
+        {
+          "id": "kw-processo",
+          "type": "text",
+          "text": "PROCESSO\nCOMERCIAL",
+          "color": "#000000",
+          "background": "#facc15",
+          "rotate": -3,
+          "y": 40,
+          "fontSize": 90,
+          "animation": "pop",
+          "exit": {
+            "type": "zoom",
+            "durationInFrames": 8
+          },
+          "from": 960,
+          "durationInFrames": 30
+        }
+      ]
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "items": [
+        {
+          "id": "flash-1",
+          "type": "solid",
+          "color": "#ffffff",
+          "opacity": 0.8,
+          "enter": {
+            "type": "fade",
+            "durationInFrames": 2
+          },
+          "exit": {
+            "type": "fade",
+            "durationInFrames": 5
+          },
+          "from": 839,
+          "durationInFrames": 7
+        },
+        {
+          "id": "flash-2",
+          "type": "solid",
+          "color": "#ffffff",
+          "opacity": 0.8,
+          "enter": {
+            "type": "fade",
+            "durationInFrames": 2
+          },
+          "exit": {
+            "type": "fade",
+            "durationInFrames": 5
+          },
+          "from": 987,
+          "durationInFrames": 7
         }
       ]
     },
@@ -38,6 +146,54 @@
           "id": "img1848",
           "type": "video",
           "src": "IMG_1848_EDITADO.mp4",
+          "enter": {
+            "type": "zoom",
+            "durationInFrames": 12
+          },
+          "grade": {
+            "brightness": 1.03,
+            "contrast": 1.08,
+            "saturate": 1.15
+          },
+          "vignette": true,
+          "zooms": [
+            {
+              "at": 150,
+              "scale": 1.12
+            },
+            {
+              "at": 240,
+              "scale": 1
+            },
+            {
+              "at": 420,
+              "scale": 1.15
+            },
+            {
+              "at": 480,
+              "scale": 1
+            },
+            {
+              "at": 630,
+              "scale": 1.1
+            },
+            {
+              "at": 720,
+              "scale": 1
+            },
+            {
+              "at": 840,
+              "scale": 1.15
+            },
+            {
+              "at": 960,
+              "scale": 1
+            },
+            {
+              "at": 990,
+              "scale": 1.1
+            }
+          ],
           "from": 0,
           "durationInFrames": 1161
         }

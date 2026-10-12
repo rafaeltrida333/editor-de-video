@@ -184,6 +184,14 @@ button.danger {
   background: #0f766e;
 }
 
+.item-captions {
+  background: #a21caf;
+}
+
+.item-progress {
+  background: #525252;
+}
+
 .item.selected {
   border-color: #fff;
 }
